@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="在Java Web程序中，Servlet主要负责接收用户请求 HttpServletRequest,在doGet(),doPost()中做相应的处理，并将回应HttpServletResponse反馈给用户。Servlet 可以设置初始化参数，供Servlet内部使用。一个Servlet类只会有一个">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Dekker">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Servlet 总结">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="在Java Web程序中，Servlet主要负责接收用户请求 HttpServletRequest,在doGet(),doPost()中做相应的处理，并将回应HttpServletResponse反馈给用户。Servlet 可以设置初始化参数，供Servlet内部使用。一个Servlet类只会有一个">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Dekker &#39; s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.com/img/tps.jpeg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.com/img/tps.jpeg">
+    
+
+    <!-- Title -->
+    
+    <title>Servlet 总结 - Dekker &#39; s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The shortest answer is doing ...</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/tps.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Servlet 总结</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-06-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>在Java Web程序中，Servlet主要负责接收用户请求 HttpServletRequest,在doGet(),doPost()中做相应的处理，并将回应HttpServletResponse反馈给用户。Servlet 可以设置初始化参数，供Servlet内部使用。一个Servlet类只会有一个实例，在它初始化时调用init()方法，销毁时调用destroy()方法<strong>。</strong>Servlet需要在web.xml中配置（MyEclipse中创建Servlet会自动配置），一个Servlet可以设置多个URL访问。Servlet不是线程安全，因此要谨慎使用类变量。</p>
+<h3 id="Servlet接口中有哪些方法及Servlet生命周期探秘"><a href="#Servlet接口中有哪些方法及Servlet生命周期探秘" class="headerlink" title="Servlet接口中有哪些方法及Servlet生命周期探秘"></a>Servlet接口中有哪些方法及Servlet生命周期探秘</h3><p>Servlet接口定义了5个方法，其中前三个方法与Servlet生命周期相关：</p>
+<ul>
+<li>void init(ServletConfig config) throws ServletException</li>
+<li>void service(ServletRequest req, ServletResponse resp) throws ServletException, java.io.IOException</li>
+<li>void destory()</li>
+<li>java.lang.String getServletInfo()</li>
+<li>ServletConfig getServletConfig()</li>
+</ul>
+<p>生命周期： Web容器加载Servlet并将其实例化后，Servlet生命周期开始，容器运行其init()方法进行Servlet的初始化；请求到达时调用Servlet的service()方法，service()方法会根据需要调用与请求对应的doGet或doPost等方法；当服务器关闭或项目被卸载时服务器会将Servlet实例销毁，此时会调用Servlet的destroy()方法。init方法和destroy方法只会执行一次，service方法客户端每次请求Servlet都会执行。Servlet中有时会用到一些需要初始化与销毁的资源，因此可以把初始化资源的代码放入init方法中，销毁资源的代码放入destroy方法中，这样就不需要每次处理客户端的请求都要初始化与销毁资源。</p>
+<h3 id="get和post请求的区别"><a href="#get和post请求的区别" class="headerlink" title="get和post请求的区别"></a>get和post请求的区别</h3><p>①get请求用来从服务器上获得资源，而post是用来向服务器提交数据；</p>
+<p>②get将表单中数据按照name=value的形式，添加到action 所指向的URL 后面，并且两者使用”?”连接，而各个变量之间使用”&amp;”连接；post是将表单中的数据放在HTTP协议的请求头或消息体中，传递到action所指向URL；</p>
+<p>③get传输的数据要受到URL长度限制（最大长度是 2048 个字符）；而post可以传输大量的数据，上传文件通常要使用post方式；</p>
+<p>④使用get时参数会显示在地址栏上，如果这些数据不是敏感数据，那么可以使用get；对于敏感数据还是应用使用post；</p>
+<p>⑤get使用MIME类型application/x-www-form-urlencoded的URL编码（也叫百分号编码）文本的格式传递参数，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是”%20”。</p>
+<p>补充：GET方式提交表单的典型应用是搜索引擎。GET方式就是被设计为查询用的。</p>
+<h3 id="什么情况下调用doGet-和doPost"><a href="#什么情况下调用doGet-和doPost" class="headerlink" title="什么情况下调用doGet()和doPost()"></a>什么情况下调用doGet()和doPost()</h3><p>Form标签里的method的属性为get时调用doGet()，为post时调用doPost()。</p>
+<h3 id="转发-Forward-和重定向-Redirect"><a href="#转发-Forward-和重定向-Redirect" class="headerlink" title="转发(Forward)和重定向(Redirect)"></a>转发(Forward)和重定向(Redirect)</h3><p>转发是服务器行为，重定向是客户端行为。</p>
+<p>转发（Forward） 通过RequestDispatcher对象的forward（HttpServletRequest request,HttpServletResponse response）方法实现的。RequestDispatcher可以通过HttpServletRequest 的getRequestDispatcher()方法获得。例如下面的代码就是跳转到login_success.jsp页面。</p>
+<p><code>request.getRequestDispatcher(&quot;login_success.jsp&quot;).forward(request, response);</code></p>
+<p>重定向（Redirect） 是利用服务器返回的状态码来实现的。客户端浏览器请求服务器的时候，服务器会返回一个状态码。服务器通过 HttpServletResponse 的 setStatus(int status) 方法设置状态码。如果服务器返回301或者302，则浏览器会到新的网址重新请求该资源。</p>
+<ul>
+<li>从地址栏显示来说</li>
+</ul>
+<p>forward是服务器请求资源,服务器直接访问目标地址的URL,把那个URL的响应内容读取过来,然后把这些内容再发给浏览器.浏览器根本不知道服务器发送的内容从哪里来的,所以它的地址栏还是原来的地址. redirect是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以地址栏显示的是新的URL.</p>
+<ul>
+<li>从数据共享来说</li>
+</ul>
+<p>forward:转发页面和转发到的页面可以共享request里面的数据. redirect:不能共享数据.</p>
+<ul>
+<li>从运用地方来说</li>
+</ul>
+<p>forward:一般用于用户登陆的时候,根据角色转发到相应的模块. redirect:一般用于用户注销登陆时返回主页面和跳转到其它的网站等</p>
+<ul>
+<li>从效率来说</li>
+</ul>
+<p>forward:高. redirect:低.</p>
+<h3 id="Servlet与线程安全"><a href="#Servlet与线程安全" class="headerlink" title="Servlet与线程安全"></a>Servlet与线程安全</h3><p>Servlet不是线程安全的，多线程并发的读写会导致数据不同步的问题。 解决的办法是尽量不要定义name属性，而是要把name变量分别定义在doGet()和doPost()方法内。虽然使用synchronized(name){}语句块可以解决问题，但是会造成线程的等待，不是很科学的办法。 注意：多线程的并发的读写Servlet类属性会导致数据不同步。但是如果只是并发地读取属性而不写入，则不存在数据不同步的问题。因此Servlet里的只读属性最好定义为final类型的。</p>
+<h3 id="JSP和Servlet是什么关系"><a href="#JSP和Servlet是什么关系" class="headerlink" title="JSP和Servlet是什么关系"></a>JSP和Servlet是什么关系</h3><p>其实这个问题在上面已经阐述过了，Servlet是一个特殊的Java程序，它运行于服务器的JVM中，能够依靠服务器的支持向浏览器提供显示内容。JSP本质上是Servlet的一种简易形式，JSP会被服务器处理成一个类似于Servlet的Java程序，可以简化页面内容的生成。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。有人说，Servlet就是在Java中写HTML，而JSP就是在HTML中写Java代码，当然这个说法是很片面且不够准确的。JSP侧重于视图，Servlet更侧重于控制逻辑，在MVC架构模式中，JSP适合充当视图（view）而Servlet适合充当控制器（controller）。</p>
+<h3 id="JSP有哪些内置对象、作用分别是什么"><a href="#JSP有哪些内置对象、作用分别是什么" class="headerlink" title="JSP有哪些内置对象、作用分别是什么"></a>JSP有哪些内置对象、作用分别是什么</h3><p>JSP有9个内置对象：</p>
+<ul>
+<li>request：封装客户端的请求，其中包含来自GET或POST请求的参数；</li>
+<li>response：封装服务器对客户端的响应；</li>
+<li>pageContext：通过该对象可以获取其他对象；</li>
+<li>session：封装用户会话的对象；</li>
+<li>application：封装服务器运行环境的对象；</li>
+<li>out：输出服务器响应的输出流对象；</li>
+<li>config：Web应用的配置对象；</li>
+<li>page：JSP页面本身（相当于Java程序中的this）；</li>
+<li>exception：封装页面抛出异常的对象。</li>
+</ul>
+<h3 id="Request对象的主要方法有哪些"><a href="#Request对象的主要方法有哪些" class="headerlink" title="Request对象的主要方法有哪些"></a>Request对象的主要方法有哪些</h3><ul>
+<li>setAttribute(String name,Object)：设置名字为name的request 的参数值</li>
+<li>getAttribute(String name)：返回由name指定的属性值</li>
+<li>getAttributeNames()：返回request 对象所有属性的名字集合，结果是一个枚举的实例</li>
+<li>getCookies()：返回客户端的所有 Cookie 对象，结果是一个Cookie 数组</li>
+<li>getCharacterEncoding() ：返回请求中的字符编码方式 = getContentLength() ：返回请求的 Body的长度</li>
+<li>getHeader(String name) ：获得HTTP协议定义的文件头信息</li>
+<li>getHeaders(String name) ：返回指定名字的request Header 的所有值，结果是一个枚举的实例</li>
+<li>getHeaderNames() ：返回所以request Header 的名字，结果是一个枚举的实例</li>
+<li>getInputStream() ：返回请求的输入流，用于获得请求中的数据</li>
+<li>getMethod() ：获得客户端向服务器端传送数据的方法</li>
+<li>getParameter(String name) ：获得客户端传送给服务器端的有 name指定的参数值</li>
+<li>getParameterNames() ：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例</li>
+<li>getParameterValues(String name)：获得有name指定的参数的所有值</li>
+<li>getProtocol()：获取客户端向服务器端传送数据所依据的协议名称</li>
+<li>getQueryString() ：获得查询字符串</li>
+<li>getRequestURI() ：获取发出请求字符串的客户端地址</li>
+<li>getRemoteAddr()：获取客户端的 IP 地址</li>
+<li>getRemoteHost() ：获取客户端的名字</li>
+<li>getSession([Boolean create]) ：返回和请求相关 Session</li>
+<li>getServerName() ：获取服务器的名字</li>
+<li>getServletPath()：获取客户端所请求的脚本文件的路径</li>
+<li>getServerPort()：获取服务器的端口号</li>
+<li>removeAttribute(String name)：删除请求中的一个属性</li>
+</ul>
+<h3 id="request-getAttribute-和-request-getParameter-有何区别"><a href="#request-getAttribute-和-request-getParameter-有何区别" class="headerlink" title="request.getAttribute()和 request.getParameter()有何区别"></a>request.getAttribute()和 request.getParameter()有何区别</h3><p>从获取方向来看：</p>
+<p>getParameter()是获取 POST/GET 传递的参数值；</p>
+<p>getAttribute()是获取对象容器中的数据值；</p>
+<p>从用途来看：</p>
+<p>getParameter()用于客户端重定向时，即点击了链接或提交按扭时传值用，即用于在用表单或url重定向传值时接收数据用。</p>
+<p>getAttribute() 用于服务器端重定向时，即在 sevlet 中使用了 forward 函数,或 struts 中使用了 mapping.findForward。 getAttribute 只能收到程序用 setAttribute 传过来的值。</p>
+<p>另外，可以用 setAttribute(),getAttribute() 发送接收对象.而 getParameter() 显然只能传字符串。 setAttribute() 是应用服务器把这个对象放在该页面所对应的一块内存中去，当你的页面服务器重定向到另一个页面时，应用服务器会把这块内存拷贝另一个页面所对应的内存中。这样getAttribute()就能取得你所设下的值，当然这种方法可以传对象。session也一样，只是对象在内存中的生命周期不一样而已。getParameter()只是应用服务器在分析你送上来的 request页面的文本时，取得你设在表单或 url 重定向时的值。</p>
+<p>总结：</p>
+<p>getParameter()返回的是String,用于读取提交的表单中的值;（获取之后会根据实际需要转换为自己需要的相应类型，比如整型，日期类型啊等等）</p>
+<p>getAttribute()返回的是Object，需进行转换,可用setAttribute()设置成任意对象，使用很灵活，可随时用</p>
+<h3 id="JSP中的四种作用域"><a href="#JSP中的四种作用域" class="headerlink" title="JSP中的四种作用域"></a>JSP中的四种作用域</h3><p>JSP中的四种作用域包括page、request、session和application，具体来说：</p>
+<ul>
+<li>page代表与一个页面相关的对象和属性。</li>
+<li>request代表与Web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个Web组件；需要在页面显示的临时数据可以置于此作用域。</li>
+<li>session代表与某个用户与服务器建立的一次会话相关的对象和属性。跟某个用户相关的数据应该放在用户自己的session中。</li>
+<li>application代表与整个Web应用程序相关的对象和属性，它实质上是跨越整个Web应用程序，包括多个页面、请求和会话的一个全局作用域。</li>
+</ul>
+<h3 id="Cookie和Session的的区别"><a href="#Cookie和Session的的区别" class="headerlink" title="Cookie和Session的的区别"></a>Cookie和Session的的区别</h3><p>Cookie 和 Session都是用来跟踪浏览器用户身份的会话方式，但是两者的应用场景不太一样。</p>
+<p>Cookie 一般用来保存用户信息 比如①我们在 Cookie 中保存已经登录过得用户信息，下次访问网站的时候页面可以自动帮你登录的一些基本信息给填了；②一般的网站都会有保持登录也就是说下次你再访问网站的时候就不需要重新登录了，这是因为用户登录的时候我们可以存放了一个 Token 在 Cookie 中，下次登录的时候只需要根据 Token 值来查找用户即可(为了安全考虑，重新登录一般要将 Token 重写)；③登录一次网站后访问网站其他页面不需要重新登录。Session 的主要作用就是通过服务端记录用户的状态。 典型的场景是购物车，当你要添加商品到购物车的时候，系统不知道是哪个用户操作的，因为 HTTP 协议是无状态的。服务端给特定的用户创建特定的 Session 之后就可以标识这个用户并且跟踪这个用户了。</p>
+<p>Cookie 数据保存在客户端(浏览器端)，Session 数据保存在服务器端。</p>
+<p>Cookie 存储在客户端中，而Session存储在服务器上，相对来说 Session 安全性更高。如果使用 Cookie 的一些敏感信息不要写入 Cookie 中，最好能将 Cookie 信息加密然后使用到的时候再去服务器端解密。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 Dekker<br></p>
+                <p class="copyright text-muted"> It's better to burn out than to fade away ... </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
+
+<!-- 鼠标点击页面显示点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!--人体时钟背景白
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+-->
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!-- 彩带样式一（鼠标点击更换样式）
+<script src="https://g.joyinshare.com/hc/ribbon.min.js" type="text/javascript"></script>
+-->
+<!-- 彩带样式二（飘动的彩带)
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+-->

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="1.你使用过哪些组件或者方法来提升网站性能,可用性以及并发量
+提高硬件能力、增加系统服务器。（当服务器增加到某个程度的时候系统所能提供的并发访问量几乎不变，所以不能根本解决问题）
+使用缓存（本地缓存：本地可以使用JDK自带的 Map、Guava Cache.分布式缓存：Redis、Memcache.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Dekker">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="面试问题汇总">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="1.你使用过哪些组件或者方法来提升网站性能,可用性以及并发量
+提高硬件能力、增加系统服务器。（当服务器增加到某个程度的时候系统所能提供的并发访问量几乎不变，所以不能根本解决问题）
+使用缓存（本地缓存：本地可以使用JDK自带的 Map、Guava Cache.分布式缓存：Redis、Memcache.">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Dekker &#39; s Blog">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.com/img/tps.jpeg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.com/img/tps.jpeg">
+    
+
+    <!-- Title -->
+    
+    <title>面试问题汇总 - Dekker &#39; s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">The shortest answer is doing ...</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/tps.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>面试问题汇总</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-06-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="1-你使用过哪些组件或者方法来提升网站性能-可用性以及并发量"><a href="#1-你使用过哪些组件或者方法来提升网站性能-可用性以及并发量" class="headerlink" title="1.你使用过哪些组件或者方法来提升网站性能,可用性以及并发量"></a>1.你使用过哪些组件或者方法来提升网站性能,可用性以及并发量</h4><ul>
+<li>提高硬件能力、增加系统服务器。（当服务器增加到某个程度的时候系统所能提供的并发访问量几乎不变，所以不能根本解决问题）<code></code></li>
+<li>使用缓存（本地缓存：本地可以使用JDK自带的 Map、Guava Cache.分布式缓存：Redis、Memcache.本地缓存不适用于提高系统并发量，一般是用处用在程序中。比如Spring是如何实现单例的呢？大家如果看过源码的话，应该知道，S把已经初始过的变量放在一个Map中，下次再要使用这个变量的时候，先判断Map中有没有，这也就是系统中常见的单例模式的实现。）</li>
+<li>消息队列 （解耦+削峰+异步）</li>
+<li>采用分布式开发 （不同的服务部署在不同的机器节点上，并且一个服务也可以部署在多台机器上，然后利用 Nginx 负载均衡访问。这样就解决了单点部署(All In)的缺点，大大提高的系统并发量）</li>
+<li>数据库分库（读写分离）、分表（水平分表、垂直分表）</li>
+<li>采用集群 （多台机器提供相同的服务）</li>
+<li>CDN 加速 (将一些静态资源比如图片、视频等等缓存到离用户最近的网络节点)</li>
+<li>浏览器缓存</li>
+<li>使用合适的连接池（数据库连接池、线程池等等）</li>
+<li>适当使用多线程进行开发。</li>
+</ul>
+<h4 id="2-设计高可用系统的常用手段"><a href="#2-设计高可用系统的常用手段" class="headerlink" title="2.设计高可用系统的常用手段"></a>2.设计高可用系统的常用手段</h4><ul>
+<li>降级： 服务降级是当服务器压力剧增的情况下，根据当前业务情况及流量对一些服务和页面有策略的降级，以此释放服务器资源以保证核心任务的正常运行。降级往往会指定不同的级别，面临不同的异常等级执行不同的处理。根据服务方式：可以拒接服务，可以延迟服务，也有时候可以随机服务。根据服务范围：可以砍掉某个功能，也可以砍掉某些模块。总之服务降级需要根据不同的业务需求采用不同的降级策略。主要的目的就是服务虽然有损但是总比没有好；</li>
+<li>限流： 防止恶意请求流量、恶意攻击，或者防止流量超出系统峰值；</li>
+<li>缓存： 避免大量请求直接落到数据库，将数据库击垮；</li>
+<li>超时和重试机制： 避免请求堆积造成雪崩；</li>
+<li>回滚机制： 快速修复错误版本。</li>
+</ul>
+<h4 id="3-性能测试了解吗-说说你知道的性能测试工具"><a href="#3-性能测试了解吗-说说你知道的性能测试工具" class="headerlink" title="3.性能测试了解吗?说说你知道的性能测试工具?"></a>3.性能测试了解吗?说说你知道的性能测试工具?</h4><p>性能测试指通过自动化的测试工具模拟多种正常、峰值以及异常负载条件来对系统的各项性能指标进行测试。性能测试是总称，通常细分为：</p>
+<ul>
+<li>基准测试： 在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考</li>
+<li>负载测试： 是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。此时继续加压，系统处理能力会下降。</li>
+<li>压力测试： 超过安全负载情况下，不断施加压力（增加并发请求），直到系统崩溃或无法处理任何请求，依此获得系统最大压力承受能力。</li>
+<li>稳定性测试： 被测试系统在特定硬件、软件、网络环境下，加载一定业务压力（模拟生产环境不同时间点、不均匀请求，呈波浪特性）运行一段较长时间，以此检测系统是否稳定。</li>
+</ul>
+<p>后端程序员或者测试平常比较常用的测试工具是 JMeter（官网：<a href="https://jmeter.apache.org/）。Apache" target="_blank" rel="noopener">https://jmeter.apache.org/）。Apache</a> JMeter 是一款基于Java的压力测试工具(100％纯Java应用程序)，旨在加载测试功能行为和测量性能。它最初被设计用于 Web 应用测试但后来扩展到其他测试领域。</p>
+<h4 id="4-在系统中使用消息队列能带来什么好处"><a href="#4-在系统中使用消息队列能带来什么好处" class="headerlink" title="4.在系统中使用消息队列能带来什么好处?"></a>4.在系统中使用消息队列能带来什么好处?</h4><ul>
+<li>通过异步处理提高系统性能<br><img src="https://raw.githubusercontent.com/king-lebron-go/myPic/master/picture/mq/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32312f313632653633613865333462613533343f773d39313026683d33353026663d6a70656726733d3239313233%20(1" alt="Image text">.jpeg)</li>
+</ul>
+<p>如上图，在不使用消息队列服务器的时候，用户的请求数据直接写入数据库，在高并发的情况下数据库压力剧增，使得响应速度变慢。但是在使用消息队列之后，用户的请求数据发送给消息队列之后立即 返回，再由消息队列的消费者进程从消息队列中获取数据，异步写入数据库。由于消息队列服务器处理速度快于数据库（消息队列也比数据库有更好的伸缩性），因此响应速度得到大幅改善。</p>
+<p>通过以上分析我们可以得出消息队列具有很好的削峰作用的功能——即通过异步处理，将短时间高并发产生的事务消息存储在消息队列中，从而削平高峰期的并发事务。 举例：在电子商务一些秒杀、促销活动中，合理使用消息队列可以有效抵御促销活动刚开始大量订单涌入对系统的冲击。如下图所示：</p>
+<p>因为用户请求数据写入消息队列之后就立即返回给用户了，但是请求数据在后续的业务校验、写数据库等操作中可能失败。因此使用消息队列进行异步处理之后，需要适当修改业务流程进行配合，比如用户在提交订单之后，订单数据写入消息队列，不能立即返回用户订单提交成功，需要在消息队列的订单消费者进程真正处理完该订单之后，甚至出库后，再通过电子邮件或短信通知用户订单成功，以免交易纠纷。这就类似我们平时手机订火车票和电影票。</p>
+<ul>
+<li>降低系统耦合性</li>
+</ul>
+<p>1.分布式消息队列和2.分布式服务。</p>
+<h4 id="5-现代互联网应用系统通常具有哪些特点"><a href="#5-现代互联网应用系统通常具有哪些特点" class="headerlink" title="5.现代互联网应用系统通常具有哪些特点?"></a>5.现代互联网应用系统通常具有哪些特点?</h4><ul>
+<li>高并发，大流量；</li>
+<li>高可用：系统7×24小时不间断服务；</li>
+<li>海量数据：需要存储、管理海量数据，需要使用大量服务器；</li>
+<li>用户分布广泛，网络情况复杂：许多大型互联网都是为全球用户提供服务的，用户分布范围广，各地网络情况千差万别；</li>
+<li>安全环境恶劣：由于互联网的开放性，使得互联网更容易受到攻击，大型网站几乎每天都会被黑客攻击；</li>
+<li>需求快速变更，发布频繁：和传统软件的版本发布频率不同，互联网产品为快速适应市场，满足用户需求，其产品发布频率是极高的；</li>
+<li>渐进式发展：与传统软件产品或企业应用系统一开始就规划好全部的功能和非功能需求不同，几乎所有的大型互联网网站都是从一个小网站开始，渐进地发展起来。</li>
+</ul>
+<h4 id="6-String-StringBuffer-和-StringBuilder-的区别是什么-String-为什么是不可变的"><a href="#6-String-StringBuffer-和-StringBuilder-的区别是什么-String-为什么是不可变的" class="headerlink" title="6.String StringBuffer 和 StringBuilder 的区别是什么? String 为什么是不可变的?"></a>6.String StringBuffer 和 StringBuilder 的区别是什么? String 为什么是不可变的?</h4><p>简单的来说：String 类中使用 final 关键字修饰字符数组来保存字符串，private　final　char　value[]，所以 String 对象是不可变的。而StringBuilder 与 StringBuffer 都继承自 AbstractStringBuilder 类，在 AbstractStringBuilder 中也是使用字符数组保存字符串char[]value 但是没有用 final 关键字修饰，所以这两种对象都是可变的。</p>
+<p>StringBuilder 与 StringBuffer 的构造方法都是调用父类构造方法也就是 AbstractStringBuilder 实现的，大家可以自行查阅源码。</p>
+<p>AbstractStringBuilder.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">abstract class AbstractStringBuilder implements Appendable, CharSequence &#123;</span><br><span class="line">    char[] value;</span><br><span class="line">    int count;</span><br><span class="line">    AbstractStringBuilder() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    AbstractStringBuilder(int capacity) &#123;</span><br><span class="line">        value = new char[capacity];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>线程安全性</p>
+<p>String 中的对象是不可变的，也就可以理解为常量，线程安全。AbstractStringBuilder 是 StringBuilder 与 StringBuffer 的公共父类，定义了一些字符串的基本操作，如 expandCapacity、append、insert、indexOf 等公共方法。StringBuffer 对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的。StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的。　</p>
+<p>性能</p>
+<p>每次对 String 类型进行改变的时候，都会生成一个新的 String 对象，然后将指针指向新的 String 对象。StringBuffer 每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 StringBuilder 相比使用 StringBuffer 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。</p>
+<p>对于三者使用的总结：</p>
+<p>操作少量的数据: 适用String<br>单线程操作字符串缓冲区下操作大量数据: 适用StringBuilder<br>多线程操作字符串缓冲区下操作大量数据: 适用StringBuffer</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2019 Dekker<br></p>
+                <p class="copyright text-muted"> It's better to burn out than to fade away ... </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
+
+<!-- 鼠标点击页面显示点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+<!--人体时钟背景白
+<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>
+-->
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!-- 彩带样式一（鼠标点击更换样式）
+<script src="https://g.joyinshare.com/hc/ribbon.min.js" type="text/javascript"></script>
+-->
+<!-- 彩带样式二（飘动的彩带)
+<script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script>
+-->
